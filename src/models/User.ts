@@ -1,7 +1,8 @@
-import { Column, Entity, PrimaryGeneratedColumn, BeforeInsert, BeforeUpdate } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn, BeforeInsert, BeforeUpdate, OneToOne, JoinColumn } from 'typeorm';
 import  bcrypt  from 'bcryptjs';
+import { Company } from "./Company";
 
-@Entity('user')
+@Entity("user")
 class User {
     @PrimaryGeneratedColumn() 
     user_id: number;
@@ -14,6 +15,14 @@ class User {
 
     @Column("varchar", { length: 255 })
     password: string;
+
+    @Column("varchar", { length: 255 })
+    type: string;
+
+    @OneToOne(() => Company)
+    @JoinColumn({ name: "company_id" })
+    company: Company;
+  
 
     @BeforeInsert()
     @BeforeUpdate()
