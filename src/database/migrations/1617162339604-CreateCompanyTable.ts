@@ -43,6 +43,7 @@ export class CreateCompanyTable1617162339604 implements MigrationInterface {
             name: "adjunct",
             type: "varchar",
             length: "255",
+            isNullable: true,
           },
           {
             name: "zipCode",
