@@ -1,10 +1,11 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class CreateCityTable1617156821971 implements MigrationInterface {
+export class CreateJobSeekerJobListingTable1618718231977
+  implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: "city",
+        name: "jobSeekerJobListing",
         columns: [
           {
             name: "id",
@@ -15,22 +16,30 @@ export class CreateCityTable1617156821971 implements MigrationInterface {
           },
 
           {
-            name: "stateId",
+            name: "jobListingId",
             type: "integer",
           },
 
           {
-            name: "name",
-            type: "varchar",
-            length: "255",
+            name: "jobSeekerId",
+            type: "integer",
           },
         ],
+
         foreignKeys: [
           {
-            name: "FKState",
-            referencedTableName: "state",
+            name: "FKJobListing",
+            referencedTableName: "jobListing",
             referencedColumnNames: ["id"],
-            columnNames: ["stateId"],
+            columnNames: ["jobListingId"],
+            onDelete: "CASCADE",
+            onUpdate: "CASCADE",
+          },
+          {
+            name: "FKJobSeeker",
+            referencedTableName: "jobSeeker",
+            referencedColumnNames: ["id"],
+            columnNames: ["jobSeeker"],
             onDelete: "CASCADE",
             onUpdate: "CASCADE",
           },
@@ -40,6 +49,6 @@ export class CreateCityTable1617156821971 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable("city");
+    await queryRunner.dropTable("jobSeekerJobListing");
   }
 }

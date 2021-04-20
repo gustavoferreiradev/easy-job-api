@@ -1,10 +1,11 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class CreateCityTable1617156821971 implements MigrationInterface {
+export class CreateInterestAreaTable1617769936194
+  implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: "city",
+        name: "interestArea",
         columns: [
           {
             name: "id",
@@ -15,24 +16,9 @@ export class CreateCityTable1617156821971 implements MigrationInterface {
           },
 
           {
-            name: "stateId",
-            type: "integer",
-          },
-
-          {
-            name: "name",
+            name: "description",
             type: "varchar",
             length: "255",
-          },
-        ],
-        foreignKeys: [
-          {
-            name: "FKState",
-            referencedTableName: "state",
-            referencedColumnNames: ["id"],
-            columnNames: ["stateId"],
-            onDelete: "CASCADE",
-            onUpdate: "CASCADE",
           },
         ],
       })
@@ -40,6 +26,6 @@ export class CreateCityTable1617156821971 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable("city");
+    await queryRunner.dropTable("interestArea");
   }
 }

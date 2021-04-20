@@ -7,7 +7,7 @@ export class CreateUserTable1617068683655 implements MigrationInterface {
         name: "user",
         columns: [
           {
-            name: "user_id",
+            name: "userId",
             type: "integer",
             isPrimary: true,
             isGenerated: true,
@@ -47,7 +47,7 @@ export class CreateUserTable1617068683655 implements MigrationInterface {
             name: "FKCompany",
             referencedTableName: "company",
             referencedColumnNames: ["id"],
-            columnNames: ["company_id"],
+            columnNames: ["companyId"],
             onDelete: "CASCADE",
             onUpdate: "CASCADE",
           },

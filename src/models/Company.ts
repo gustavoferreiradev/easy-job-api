@@ -43,7 +43,7 @@ class Company {
   email: string;
 
   @OneToOne(() => City)
-  @JoinColumn({ name: "city_id" })
+  @JoinColumn({ name: "cityId" })
   city: City;
 }
 

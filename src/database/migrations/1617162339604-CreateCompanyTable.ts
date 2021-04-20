@@ -67,7 +67,7 @@ export class CreateCompanyTable1617162339604 implements MigrationInterface {
           },
 
           {
-            name: "city_id",
+            name: "cityId",
             type: "integer",
           },
         ],
@@ -76,7 +76,7 @@ export class CreateCompanyTable1617162339604 implements MigrationInterface {
             name: "FKCity",
             referencedTableName: "city",
             referencedColumnNames: ["id"],
-            columnNames: ["city_id"],
+            columnNames: ["cityId"],
             onDelete: "CASCADE",
             onUpdate: "CASCADE",
           },
