@@ -37,7 +37,7 @@ export class CreateUserTable1617068683655 implements MigrationInterface {
             length: "255",
           },
           {
-            name: "company_id",
+            name: "companyId",
             type: "integer",
           },
         ],

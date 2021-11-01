@@ -16,8 +16,8 @@ class JobListing {
   @Column("varchar", { length: 255 })
   description: string;
 
-  @Column("status")
-  status: boolean;
+  @Column("integer")
+  status: number;
 
   @ManyToOne(() => Company)
   @JoinColumn({ name: "companyId" })

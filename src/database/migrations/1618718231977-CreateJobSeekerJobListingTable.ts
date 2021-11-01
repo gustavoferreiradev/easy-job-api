@@ -1,7 +1,8 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
 export class CreateJobSeekerJobListingTable1618718231977
-  implements MigrationInterface {
+  implements MigrationInterface
+{
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
@@ -39,7 +40,7 @@ export class CreateJobSeekerJobListingTable1618718231977
             name: "FKJobSeeker",
             referencedTableName: "jobSeeker",
             referencedColumnNames: ["id"],
-            columnNames: ["jobSeeker"],
+            columnNames: ["jobSeekerId"],
             onDelete: "CASCADE",
             onUpdate: "CASCADE",
           },

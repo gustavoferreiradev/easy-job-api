@@ -21,7 +21,7 @@ export class CreateJobListingTable1617771338089 implements MigrationInterface {
 
           {
             name: "status",
-            type: "boolean",
+            type: "integer",
           },
 
           {
@@ -38,7 +38,7 @@ export class CreateJobListingTable1617771338089 implements MigrationInterface {
             name: "FKInterestArea",
             referencedTableName: "InterestAreas",
             referencedColumnNames: ["id"],
-            columnNames: ["interestAareaId"],
+            columnNames: ["interestAreaId"],
             onDelete: "CASCADE",
             onUpdate: "CASCADE",
           },

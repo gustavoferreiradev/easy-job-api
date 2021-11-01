@@ -1,4 +1,5 @@
 import { Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { JobListing } from "./JobListing";
 import { JobSeeker } from "./JobSeeker";
 
 @Entity("jobSeekerJobListing")
